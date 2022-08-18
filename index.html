@@ -22,15 +22,10 @@
       <button @click="addGoal">Add Goal</button>
       <p v-if="goals.length===0">No goals have been added yet - please start adding some!</p>
       <ul v-if="goals.length>0">
-        <!-- <li v-for="goal in goals">{{goal}}</li> -->
-        <!-- comment : an other way to show list with index of each object -->
-        <li v-for="(goal ,index) in goals">{{goal}} - {{index}}</li>
+        <li v-for="(goal ,index) in goals" @click="removeGoal(index)">{{goal}} - {{index}}</li>
       
       </ul>  
-      <!-- comment : to show objects with key and value and index-->
-      <!-- <ul>
-          <li v-for="(value , key ,index) in {'name':'Mehdi' ,'age':'22'}">{{key}}: {{value}} - {{index}}</li>
-        </ul> -->
+
     </section>
   </body>
 </html>
