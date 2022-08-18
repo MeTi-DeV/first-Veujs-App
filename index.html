@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- comment : to use Vue as CDN -->
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Vue Events</h1>
+    </header>
+    <section id="events">
+      <h2>Events in Action</h2>
+      <!-- comment : vue has many properties all of them will begin with v-  -->
+      <!-- comment : v-on:click will change events like here to change sate of result  -->
+      <!-- comment : add to my methods arguments to change values more better  -->
+      <button v-on:click="increase(5)">Add</button>
+      <button  v-on:click="decrease(5)">Remove</button>
+      <!-- comment : best way to show new value of counter is that to use {{}} and put that value between them -->
+      <p>Result: {{ counter }}</p>
+    </section>
+  </body>
+</html>
