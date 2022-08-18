@@ -6,10 +6,8 @@ const app = Vue.createApp({
     };
   },
   methods: {
-    //comment : method to add new goal to list
-    addGoal(){
+    addGoal() {
       this.goals.push(this.entredGoalValue);
-      console.log(this.goals.length)
     }
   }
 });

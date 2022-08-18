@@ -20,13 +20,17 @@
       <h2>My course goals</h2>
       <input type="text" v-model="entredGoalValue" />
       <button @click="addGoal">Add Goal</button>
-      <!-- comment : v-if for compare states of app there is v-else-if and v-else them should define after v-if  -->
       <p v-if="goals.length===0">No goals have been added yet - please start adding some!</p>
-      <!-- comment : also we can use v-show but it's not prefer to use it's will be use for disable a part of app like disable a button -->
-      <p v-show="goals.length===0">No goals have been added yet - please start adding some!</p>
       <ul v-if="goals.length>0">
-        <li>Goal</li>
-      </ul>
+        <!-- <li v-for="goal in goals">{{goal}}</li> -->
+        <!-- comment : an other way to show list with index of each object -->
+        <li v-for="(goal ,index) in goals">{{goal}} - {{index}}</li>
+      
+      </ul>  
+      <!-- comment : to show objects with key and value and index-->
+      <!-- <ul>
+          <li v-for="(value , key ,index) in {'name':'Mehdi' ,'age':'22'}">{{key}}: {{value}} - {{index}}</li>
+        </ul> -->
     </section>
   </body>
 </html>
