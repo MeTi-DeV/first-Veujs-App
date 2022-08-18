@@ -4,12 +4,14 @@ const app = Vue.createApp({
       name: '',
       confirmName: '',
       counter: 0,
-
+      //comment : here define boxes objects
+      boxASelected: false,
+      boxBSelected: false,
+      boxCSelected: false,
     };
 
   },
-  //   comment :  computed use for time that we want to show some data and 
-  //we don't need for next time to recalcute that   
+
 
   computed: {
     fullName() {
@@ -36,17 +38,25 @@ const app = Vue.createApp({
     setName(event, lastname) {
       this.name = event.target.value;
     },
-    //comment : if we call this method here to show name every time for each 
-    // method that executed this method will execute too
     confirmInput() {
       this.confirmName = this.name;
     },
     resetInput() {
       this.name = ''
-    }
+    },
     // submitForm() {
     //   alert("Hello " + this.confirmName);
     // }
+//comment : here I defind a method to compare state of each box status is true or false
+    boxSelected(box) {
+      if (box === 'A') {
+        return this.boxASelected = !this.boxASelected
+      } else if (box === 'B') {
+        return this.boxBSelected = !this.boxBSelected
+      } else if (box === 'C') {
+        return this.boxCSelected = !this.boxCSelected
+      }
+    }
   }
 });
 app.mount('#events');

@@ -18,18 +18,22 @@
   <section id="events">
 
     <h2>Events in Action</h2>
-    <button v-on:click="increase(10)">Add(10)</button>
-    <button v-on:click="decrease(5)">Remove(5)</button>
+    <button @click="increase(10)">Add(10)</button>
+    <button @click="decrease(5)">Remove(5)</button>
     <p>Result: {{ counter }}</p>
 
     <label for="">Enter Your Name : </label>
-    <!--comment :  
-    v-model : do both behavior of v-on:input and v-bind:value,
-    -->
-    <input type="text" v-model="name" v-on:keyup.enter="confirmInput">
-    <!-- <input type="text" v-bind:value="name" v-on:input="setName($event ,' Zarei')" v-on:keyup.enter="confirmInput"> -->
-    <button v-on:click="resetInput">Rest Input</button>
+    <input type="text" v-model="name" @keyup.enter="confirmInput">
+    <!-- <input type="text" v-bind:value="name" @input="setName($event ,' Zarei')" @keyup.enter="confirmInput"> -->
+    <button @click="resetInput">Rest Input</button>
     <p>Your Name Is: {{fullName}}</p>
+  </section>
+  <!-- comment : other way to change of view of stlies of ui like below -->
+  <section id="styling">
+    <!-- comment : class="demo" is default style when each compare is false and :class="" is when for each is true it's change ui -->
+    <div class="demo" :class="{active:boxASelected}" @click="boxSelected('A')"></div>
+    <div class="demo" :class="{active:boxBSelected}" @click="boxSelected('B')"></div>
+    <div class="demo" :class="{active:boxCSelected}" @click="boxSelected('C')"></div>
   </section>
 </body>
 
