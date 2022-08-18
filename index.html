@@ -16,27 +16,20 @@
     <h1>Vue Events</h1>
   </header>
   <section id="events">
-    <!-- comment : every properties explain at below is modifire of events
-right: to behavior when right click of mouse tap 
-left: to behavior when left click of mouse tap 
-enter: to behavior when enter click of keyboard tap 
-prevent: form as default when not connected to server reload page prevent modifire don't  let to form reload page and clear DOM of page
-      -->
-    <h2>Events in Action</h2>
-    <button v-on:click.right="increase(5)">Add(5)</button>
-    <button v-on:click.left="decrease(5)">Remove(5)</button>
-    <p>Result: {{ counter }}</p>
-    <!--comment :  
-    keyup : for use keyboard to setup input value,
-    -->
-    <label for="">Enter Your Name : </label>
-    <input type="text" v-on:input="setName($event ,' Zarei')" v-on:keyup.enter="confirmInput">
-    <p>Your Name Is: {{confirmName}}</p>
-    <form v-on:submit.prevent="submitForm">
-      <input type="text">
-      <button>Sign Up</button>
-    </form>
 
+    <h2>Events in Action</h2>
+    <button v-on:click="increase(10)">Add(10)</button>
+    <button v-on:click="decrease(5)">Remove(5)</button>
+    <p>Result: {{ counter }}</p>
+
+    <label for="">Enter Your Name : </label>
+    <!--comment :  
+    v-model : do both behavior of v-on:input and v-bind:value,
+    -->
+    <input type="text" v-model="name" v-on:keyup.enter="confirmInput">
+    <!-- <input type="text" v-bind:value="name" v-on:input="setName($event ,' Zarei')" v-on:keyup.enter="confirmInput"> -->
+    <button v-on:click="resetInput">Rest Input</button>
+    <p>Your Name Is: {{fullName}}</p>
   </section>
 </body>
 
